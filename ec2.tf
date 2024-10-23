@@ -1,18 +1,3 @@
-locals{
-    users = [
-        "andrei",
-        "catalin",
-        "claudiu",
-        "elena",
-        "georgian",
-        "marius",
-        "sanziana",
-        "razvan" 
-
-    ]
-}
-
-
 terraform {
   backend "s3" {
     bucket = "sagar-232323"
@@ -61,17 +46,4 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-
-resource "aws_iam_group" "attendees" {
-  name = "attendees"
-  path = "/users/"
-}
-
-
-resource "aws_iam_user" "attendees" {
-  count = 8 
-  name = local.users[count.index]
-  path = "/users/"
-}
-
 
