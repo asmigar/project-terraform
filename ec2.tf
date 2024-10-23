@@ -8,6 +8,17 @@ terraform {
 
 
 
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket-232323"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
+
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
