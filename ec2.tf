@@ -25,7 +25,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  count = 5
+  count = 4
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
