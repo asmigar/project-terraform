@@ -3,13 +3,14 @@ terraform {
     bucket = "sagar-232323"
     key    = "terraform.tfstate"
     region = "us-east-1"
+    dynamodb_table = "tf-lock-table"
   }
 }
 
 
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket-232323"
+  bucket = "noble-prog-test-bucket-232323"
 
   tags = {
     Name        = "My bucket"
